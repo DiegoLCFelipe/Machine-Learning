@@ -1,0 +1,11 @@
+15/07/2024 10:39:43 - Teste de Esfericidade de Bartlet
+
+Chi-quadrado: 107.81565276769275
+P-valor: 1.0099312975536455e-11
+Graus de liberdade: 28
+
+Rejeita-se H0 (Mmatriz de correlações igual a matriz identidade):,
+logo a análise fatorial pode ser aplicada
+
+Nº de fatores recomendados utilizando o critério de Kaiser: 2
+

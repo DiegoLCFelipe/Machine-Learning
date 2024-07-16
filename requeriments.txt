@@ -1,0 +1,7 @@
+# Bibliotecas básicas
+pandas
+pypyaml
+matplotlib=3.9.1
+seaborn=0.13.2
+factor_analyzer=0.3.2
+openpyxl=3.1.4

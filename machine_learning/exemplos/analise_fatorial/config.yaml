@@ -1,0 +1,12 @@
+# config.yaml
+path: 'machine_learning/exemplos/analise_fatorial/data/teste.xlsx'
+variaveis_metricas:
+  - 'CachoVerdeHa'
+  - 'CachoVerdeHa_1'
+  - 'CachoMaduroHa'
+  - 'CachoMaduroHa_1'
+  - 'ProducaoTon'
+  - 'AnteseHa_4'
+  - 'AnteseHa_5'
+  - 'AnteseHa_6'
+significancia: 0.05
