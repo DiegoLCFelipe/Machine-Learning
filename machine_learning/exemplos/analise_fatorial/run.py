@@ -42,11 +42,14 @@ if p_valor < SIGNIFICANCIA:
       comunalidades = analise_fatorial.tabela_de_comunalidades()
       dados_rankeados = analise_fatorial.dados_rankeados()
 
-      autovalores.to_csv(CURRENT_PATH + '/autovalores.log', index_label='Fator')
-      cargas.to_csv(CURRENT_PATH + '/cargas.log', index_label='Variável')
-      comunalidades.to_csv(CURRENT_PATH + '/comunalidades.log', index_label='Variável')
-      dados_rankeados.to_csv(CURRENT_PATH + '/dados_rankeados.log')
-      print(CURRENT_PATH)
+      autovalores.to_csv(CURRENT_PATH + '/log/autovalores.log', index_label='Fator')
+      cargas.to_csv(CURRENT_PATH + '/log/cargas.log', index_label='Variável')
+      comunalidades.to_csv(CURRENT_PATH + '/log/comunalidades.log', index_label='Variável')
+      dados_rankeados.to_csv(CURRENT_PATH + '/log/dados_rankeados.log')
+
+      visualizacao.mapa_de_calor(matriz_corr_pearson)
+      visualizacao.grafico_de_cargas(cargas, 'Fator 1', 'Fator 2')
+      visualizacao.fatores_extraidos(autovalores, 'Variância')
 else:
     log.log_warning(f'Aceita-se H0 (Mmatriz de correlações igual a matriz identidade):,\n'
           f'logo a análise fatorial não pode ser aplicada\n')

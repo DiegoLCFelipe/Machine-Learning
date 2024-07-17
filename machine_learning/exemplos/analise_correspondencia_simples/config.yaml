@@ -1,0 +1,6 @@
+# config.yaml
+path: 'machine_learning/exemplos/analise_correspondencia_simples/data/perfil_aplicacao.xlsx'
+variaveis:
+  - 'Perfil'
+  - 'Tipo de Aplicacao'
+
