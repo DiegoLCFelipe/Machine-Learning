@@ -7,6 +7,7 @@ sys.path.insert(0,os.path.abspath(os.curdir))
 from machine_learning.models.analise_correspondencia_simples import AnaliseCorrespondenciaSimples
 from machine_learning.utils.logger import LogHandler
 import machine_learning.utils.graficos as visualizacao
+from machine_learning.utils.estatistica import AnaliseDeFrequencias
 
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 with open(CURRENT_PATH + '/config.yaml', 'r') as file:
@@ -17,6 +18,9 @@ VARIAVEIS = config['variaveis']
 dados = pd.read_excel(PATH, decimal=',')
 dados_analise = dados[VARIAVEIS]
 
-print(pd.crosstab(dados_analise[VARIAVEIS[0]], dados_analise[VARIAVEIS[1]]))
+analise_de_frequencias = AnaliseDeFrequencias(dados_analise[VARIAVEIS[0]], dados_analise[VARIAVEIS[1]])
+print(analise_de_frequencias.residuos_padronizados())
+
+#print(pd.crosstab(dados_analise[VARIAVEIS[0]], dados_analise[VARIAVEIS[1]]))
 #analise =  AnaliseCorrespondenciaSimples(dados_analise)
-#print(analise.get_autovalores)
+#print(analise.get_autovalores) 

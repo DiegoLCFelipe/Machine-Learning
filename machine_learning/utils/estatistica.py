@@ -1,29 +1,48 @@
 import pandas as pd
-from typing import Series
-from typing import DataFrame
 from scipy.stats import chi2_contingency
+import statsmodels.api as sm
 
+class AnaliseDeFrequencias:
+    def __init__(self, variavel1: pd.Series, variavel2: pd.Series) -> None:
+        self.variavel1 = variavel1
+        self.variavel2 = variavel2
+        self.tabela_de_frequencias = self._gera_tabela_de_contingencia()
+        self.tabela_de_frequencias_parametrizada = self._gera_tabela_parametrizada()
 
-def tabela_de_contingencia(variavel1: Series[float], variavel2: Series[float]) -> DataFrame[float]:
-    """Função que gera a tabela de contingência - frequências com que cada combinação
-      de categorias aparece em um conjunto de dados.
+    def get_tabela_de_frequencias(self):
+         return self.tabela_de_frequencias
+             
 
-    Args:
-        variavel1 (Series[float]): _description_
-        variavel2 (Series[float]): _description_
+    def _gera_tabela_de_contingencia(self) -> pd.DataFrame:
+        """Função que gera a tabela de contingência - frequências com que cada combinação
+        de categorias aparece em um conjunto de dados.
 
-    Returns:
-        DataFrame[float]: Tabela de contingência
-    """
-    return pd.crosstab(variavel1, variavel2)
+        Args:
+            variavel1 (Series[float]): 
+            variavel2 (Series[float]): 
 
-def chi2_tabela_de_contingecia(tabela_contingencia:DataFrame[float]) -> object: 
-    """Analisa a significância estatística da associação entre as variáveis (teste qui²)
+        Returns:
+            DataFrame[float]: Tabela de contingência
+        """
+        return pd.crosstab(self.variavel1, self.variavel2)
 
-    Args:
-        tabela_contingencia (DataFrame[float]): tabela contendo as fequências observadas
+    def aplica_chi2_tabela_de_contingecia(self) -> object: 
+            """Analisa a significância estatística da associação entre as variáveis (teste qui²)
 
-    Returns:
-        object: contendo a estatística de teste, p-value e as frequências esperadas 
-    """
-    return chi2_contingency(tabela_contingencia)
+            Args:
+                tabela_contingencia (DataFrame[float]): tabela contendo as fequências observadas
+
+            Returns:
+                object: contendo a estatística de teste, p-value e as frequências esperadas 
+            """
+            return chi2_contingency(self.tabela_de_frequencias)
+    
+    def _gera_tabela_parametrizada(self) -> sm.stats.Table:
+        """Função auxiliar para instanciar a tabela de frequências na biblioteca statsmodels
+
+        Returns:
+            sm.stats.Table: objeto que será manipulado pela biblioteca
+        """
+        return sm.stats.Table(self.tabela_de_frequencias)
+
+   
