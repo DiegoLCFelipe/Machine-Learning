@@ -45,4 +45,12 @@ class AnaliseDeFrequencias:
         """
         return sm.stats.Table(self.tabela_de_frequencias)
 
-   
+    def tabela_de_frequencias_absolutas_esperadas(self):
+        """Calcula a tabela de frequências absolutas esperadas. Utilizada no cálculo dos residuos para verificar a independência das variáveis.
+
+        Returns:
+            _type_: Tabela de frequências absolutas esperadas
+        """
+        return self.tabela_de_frequencias_parametrizada.fittedvalues
+
+ 
