@@ -53,4 +53,19 @@ class AnaliseDeFrequencias:
         """
         return self.tabela_de_frequencias_parametrizada.fittedvalues
 
- 
+    def tabela_de_residuos(self):
+        """Calcula tabela de resíduos utilizadas para verificação da independência das variávels analizadas
+
+        Returns:
+            _type_: Tabela de resíduos
+        """
+        return self.tabela_de_frequencias - self.tabela_de_frequencias_absolutas_esperadas()
+    
+    def chi2_por_celula(self):
+         return self.tabela_de_frequencias_parametrizada.chi2_contribs
+    
+    def residuos_padronizados(self):
+         return self.tabela_de_frequencias_parametrizada.resid_pearson
+    
+    def residuos_padronizados_ajustados(self):
+         return self.tabela_de_frequencias_parametrizada.standardized_resids
