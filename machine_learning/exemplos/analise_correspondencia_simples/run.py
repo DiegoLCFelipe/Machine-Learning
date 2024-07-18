@@ -19,7 +19,7 @@ dados = pd.read_excel(PATH, decimal=',')
 dados_analise = dados[VARIAVEIS]
 
 analise_de_frequencias = AnaliseDeFrequencias(dados_analise[VARIAVEIS[0]], dados_analise[VARIAVEIS[1]])
-print(analise_de_frequencias.residuos_padronizados())
+print(analise_de_frequencias.chi2_por_celula())
 
 #print(pd.crosstab(dados_analise[VARIAVEIS[0]], dados_analise[VARIAVEIS[1]]))
 #analise =  AnaliseCorrespondenciaSimples(dados_analise)
