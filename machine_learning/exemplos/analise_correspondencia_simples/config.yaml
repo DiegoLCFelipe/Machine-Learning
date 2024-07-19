@@ -3,4 +3,5 @@ path: 'machine_learning/exemplos/analise_correspondencia_simples/data/perfil_apl
 variaveis:
   - 'Perfil'
   - 'Tipo de Aplicacao'
+significancia: 0.05
 

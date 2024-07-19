@@ -26,7 +26,7 @@ class AnaliseDeFrequencias:
         """
         return pd.crosstab(self.variavel1, self.variavel2)
 
-    def aplica_chi2_tabela_de_contingecia(self) -> object: 
+    def tabela_chi2(self) -> object: 
             """Analisa a significância estatística da associação entre as variáveis (teste qui²)
 
             Args:
@@ -69,7 +69,7 @@ class AnaliseDeFrequencias:
         """
         return self.tabela_de_frequencias_parametrizada.chi2_contribs
     
-    def residuos_padronizados(self):
+    def tabela_de_residuos_ajustados(self):
         """Calcula a tabela de resíduos padronizados.
 
         Returns:
@@ -77,7 +77,7 @@ class AnaliseDeFrequencias:
         """
         return self.tabela_de_frequencias_parametrizada.resid_pearson
     
-    def residuos_padronizados_ajustados(self):
+    def tabela_de_residuos_padronizados_ajustados(self):
         """Calcula a tabela de resíduos padroniados ajustados.
 
         Returns:

@@ -1,11 +1,7 @@
-16/07/2024 12:53:51 - Teste de Esfericidade de Bartlet
+19/07/2024 11:27:20 - Teste de Chi-Quadrado
 
-Chi-quadrado: 107.81565276769275
-P-valor: 1.0099312975536455e-11
-Graus de liberdade: 28
+Chi-quadrado: 31.764
+P-valor: 0.00
+Graus de liberdade: 4.0
 
-Rejeita-se H0 (Mmatriz de correlações igual a matriz identidade):,
-logo a análise fatorial pode ser aplicada
-
-Nº de fatores recomendados utilizando o critério de Kaiser: 2
-
+Rejeita-se H0: as variáveis se associam de forma aleatória.

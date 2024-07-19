@@ -50,6 +50,7 @@ if p_valor < SIGNIFICANCIA:
       visualizacao.mapa_de_calor(matriz_corr_pearson)
       visualizacao.grafico_de_cargas(cargas, 'Fator 1', 'Fator 2')
       visualizacao.fatores_extraidos(autovalores, 'Variância')
+      visualizacao.mostrar()
 else:
     log.log_warning(f'Aceita-se H0 (Mmatriz de correlações igual a matriz identidade):,\n'
           f'logo a análise fatorial não pode ser aplicada\n')
